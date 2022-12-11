@@ -10,7 +10,7 @@ public class Generics {
         List<String> firstList = new ArrayList<>();
         firstList.add(name);
         List<String> secondList = new ArrayList<>();
-        secondList.add(firstList);
+        secondList.add(firstList.toString());
         return secondList;
     }
 
@@ -20,7 +20,7 @@ public class Generics {
     }
 
     //TODO: Refactor Method-3
-    public void  cloneMethod(List<Number> consumer, List<Integer> producer) {
+    public <T> void  cloneMethod(List<? super T> consumer, List<? extends T> producer) {
         consumer.addAll(producer);
     }
 
